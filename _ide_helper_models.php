@@ -18,6 +18,7 @@ namespace App\Models{
  * @property int $id
  * @property string|null $headers
  * @property string|null $message
+ * @property string|null $source_type
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Log newModelQuery()
@@ -27,6 +28,7 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Log whereHeaders($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Log whereId($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Log whereMessage($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Log whereSourceType($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Log whereUpdatedAt($value)
  */
 	class Log extends \Eloquent {}
@@ -38,23 +40,79 @@ namespace App\Models{
  *
  * @property int $id
  * @property int|null $log_id
- * @property string|null $version
+ * @property string|null $app_version
  * @property string|null $web_service_version
  * @property string|null $database_version
+ * @property string|null $back_office_version
+ * @property string|null $app_id
+ * @property string|null $app_name
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @method static \Illuminate\Database\Eloquent\Builder<static>|LogApp newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|LogApp newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|LogApp query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|LogApp whereAppId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|LogApp whereAppName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|LogApp whereAppVersion($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|LogApp whereBackOfficeVersion($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|LogApp whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|LogApp whereDatabaseVersion($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|LogApp whereId($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|LogApp whereLogId($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|LogApp whereUpdatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|LogApp whereVersion($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|LogApp whereWebServiceVersion($value)
  */
 	class LogApp extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
+ * 
+ *
+ * @property int $id
+ * @property int|null $log_client_id
+ * @property string|null $app_user_id
+ * @property string|null $name
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|LogAppUser newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|LogAppUser newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|LogAppUser query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|LogAppUser whereAppUserId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|LogAppUser whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|LogAppUser whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|LogAppUser whereLogClientId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|LogAppUser whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|LogAppUser whereUpdatedAt($value)
+ */
+	class LogAppUser extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
+ * 
+ *
+ * @property int $id
+ * @property int|null $log_id
+ * @property int|null $client_id
+ * @property string|null $name
+ * @property string|null $support_branch
+ * @property string|null $country
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|LogClient newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|LogClient newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|LogClient query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|LogClient whereClientId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|LogClient whereCountry($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|LogClient whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|LogClient whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|LogClient whereLogId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|LogClient whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|LogClient whereSupportBranch($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|LogClient whereUpdatedAt($value)
+ */
+	class LogClient extends \Eloquent {}
 }
 
 namespace App\Models{
