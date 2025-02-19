@@ -9,9 +9,7 @@ use App\Models\LogApp;
 use App\Models\LogAppUser;
 use App\Models\LogClient;
 use App\Models\LogDevice;
-use Illuminate\Http\Request;
 use Throwable;
-use Validator;
 
 class LoggsController extends Controller
 {

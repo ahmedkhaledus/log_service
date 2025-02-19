@@ -58,8 +58,7 @@ class LogStoreRequest extends FormRequest
     {
         throw new HttpResponseException(response()->json([
             'status' => false,
-            'message' => 'Validation Failed',
-            'errors' => $validator->errors()
+            'message' => 'Unprocessable Content',
         ], 422));
     }
 }
