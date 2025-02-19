@@ -22,7 +22,8 @@ class LoggsController extends Controller
             $log = Log::create([
                 "headers" => json_encode($request->headers->all()),
                 "message" => json_encode([$request->message]),
-                "source_type" => $request->source_type
+                "source_type" => $request->source_type,
+                "date_time" => $request->date_time
             ]);
 
             $logClient = LogClient::create([

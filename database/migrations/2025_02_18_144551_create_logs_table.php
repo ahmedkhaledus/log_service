@@ -16,6 +16,7 @@ return new class extends Migration
             $table->longText("headers")->nullable();
             $table->longText("message")->nullable();
             $table->longText("source_type")->nullable();
+            $table->timestamp("date_time");
             $table->timestamps();
         });
     }
